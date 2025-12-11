@@ -15,14 +15,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-pink-50 selection:bg-rose-200">
+    <div className="app-container">
       {/* Background Ambience */}
       <FloatingParticles />
       <ClickSparkle />
       <AudioPlayer />
 
       {/* Main Content Sections */}
-      <main className="relative z-10">
+      <main className="main-content">
         <IntroSection onScrollDown={scrollToMessage} />
         
         <div ref={messageRef}>
@@ -34,8 +34,8 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 py-8 text-center bg-white/40 backdrop-blur-sm">
-        <p className="font-body text-rose-800 text-sm md:text-base">
+      <footer className="app-footer">
+        <p className="footer-text">
           Made with ❤️ by your students
         </p>
       </footer>

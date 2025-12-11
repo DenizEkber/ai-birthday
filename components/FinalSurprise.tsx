@@ -37,7 +37,7 @@ const FinalSurprise: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen w-full flex flex-col items-center justify-center p-6 relative">
+    <section className="section">
       <AnimatePresence>
         {!isOpen ? (
           <motion.div
@@ -45,12 +45,12 @@ const FinalSurprise: React.FC = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            className="cursor-pointer group"
+            className="gift-box-container"
             onClick={handleOpen}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
+            <div className="cake-svg-container">
                 {/* Simple CSS/SVG Gift Box */}
-                <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-2xl filter group-hover:brightness-110 transition-all">
+                <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%', filter: 'drop-shadow(0 10px 10px rgba(0,0,0,0.2))' }}>
                     {/* Box Base */}
                     <rect x="20" y="40" width="60" height="50" fill="#F472B6" rx="2" />
                     {/* Ribbon Vertical */}
@@ -63,8 +63,8 @@ const FinalSurprise: React.FC = () => {
                     <path d="M50 30 C 50 10, 20 10, 45 30 C 20 10, 20 40, 45 32" fill="none" stroke="#FDE047" strokeWidth="5" />
                     <path d="M50 30 C 50 10, 80 10, 55 30 C 80 10, 80 40, 55 32" fill="none" stroke="#FDE047" strokeWidth="5" />
                 </svg>
-                <div className="absolute top-full left-0 w-full text-center mt-4">
-                    <p className="font-body text-rose-500 animate-bounce">Click to Open!</p>
+                <div className="gift-hint">
+                    <p style={{ fontFamily: 'var(--font-body)', fontWeight: 600 }}>Click to Open!</p>
                 </div>
             </div>
           </motion.div>
@@ -74,11 +74,11 @@ const FinalSurprise: React.FC = () => {
             initial={{ scale: 0, rotate: 180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ type: "spring", bounce: 0.5 }}
-            className="flex flex-col items-center"
+            className="cake-wrapper"
           >
              {/* Big Birthday Cake SVG */}
-             <div className="w-64 h-64 md:w-96 md:h-96 relative">
-                <svg viewBox="0 0 200 200" className="w-full h-full">
+             <div className="cake-svg-container">
+                <svg viewBox="0 0 200 200" style={{ width: '100%', height: '100%' }}>
                     {/* Plate */}
                     <ellipse cx="100" cy="170" rx="80" ry="20" fill="#E5E7EB" />
                     
@@ -99,9 +99,9 @@ const FinalSurprise: React.FC = () => {
                     <rect x="124" y="50" width="6" height="30" fill="#34D399" />
 
                     {/* Flames (Animated CSS) */}
-                    <circle cx="73" cy="45" r="4" fill="#FCD34D" className="animate-[candle-flicker_0.8s_infinite] origin-center" />
-                    <circle cx="100" cy="45" r="4" fill="#FCD34D" className="animate-[candle-flicker_1.1s_infinite] origin-center" />
-                    <circle cx="127" cy="45" r="4" fill="#FCD34D" className="animate-[candle-flicker_0.9s_infinite] origin-center" />
+                    <circle cx="73" cy="45" r="4" fill="#FCD34D" className="candle-flame flame-1" />
+                    <circle cx="100" cy="45" r="4" fill="#FCD34D" className="candle-flame flame-2" />
+                    <circle cx="127" cy="45" r="4" fill="#FCD34D" className="candle-flame flame-3" />
                 </svg>
              </div>
 
@@ -109,7 +109,7 @@ const FinalSurprise: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="font-heading text-5xl md:text-7xl text-rose-600 text-center mt-8 drop-shadow-md"
+                className="cake-heading"
              >
                 Happy Birthday, Teacher!
              </motion.h1>
@@ -118,7 +118,7 @@ const FinalSurprise: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="mt-4 font-body text-xl text-gray-600"
+                className="cake-text"
              >
                 Make a wish! 🕯️
              </motion.p>

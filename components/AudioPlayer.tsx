@@ -36,10 +36,10 @@ const AudioPlayer: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="audio-player">
       <button 
         onClick={togglePlay}
-        className="bg-white/50 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white/80 transition-all text-rose-600 border border-rose-200"
+        className="audio-btn"
         aria-label={isPlaying ? "Mute Music" : "Play Music"}
       >
         {isPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}

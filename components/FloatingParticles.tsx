@@ -19,11 +19,11 @@ const FloatingParticles: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div className="particle-container">
       {particles.map((p) => (
         <motion.div
           key={p.id}
-          className="absolute rounded-full opacity-40 blur-sm"
+          className="particle"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
